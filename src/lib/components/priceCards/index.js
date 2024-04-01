@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Tooltip, Typography } from "@mui/material";
 import { font, theme } from "../../styles";
 import { ButtonCustom } from "../button/button";
 import { Info } from "@mui/icons-material";
@@ -12,6 +12,10 @@ export const PriceCards = React.memo(({ priceData, globalQuery }) => {
         <Box
           backgroundColor={theme.col_1}
           minWidth="178px"
+          sx={{
+            transition: ".5s ease 0s",
+            "&:hover": { transform: "scale(1.04)" },
+          }}
           display={"flex"}
           flexDirection={"column"}
           gap="10px"
@@ -47,7 +51,25 @@ export const PriceCards = React.memo(({ priceData, globalQuery }) => {
             {priceData[key]?.rate}
           </Typography>
           <Box backgroundColor={theme.col_1} display={"flex"}>
-            <Info sx={{ color: theme.col_4 }} />
+            <Tooltip
+              title={
+                <Box display="flex" flexDirection="column" gap="8px">
+                  <Typography
+                    display="flex"
+                    gap="4px"
+                    fontSize={font.size.fs_4}
+                  >
+                    Price:
+                    <Typography fontSize={font.size.fs_4}>
+                      {he.decode(priceData[key]?.symbol)}
+                      {priceData[key]?.rate}
+                    </Typography>
+                  </Typography>
+                </Box>
+              }
+            >
+              <Info sx={{ color: theme.col_4 }} />
+            </Tooltip>
             <Box flex="1"></Box>
             <ButtonCustom
               background={theme.col_16}

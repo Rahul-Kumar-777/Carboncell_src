@@ -14,6 +14,7 @@ export const ChartCard = React.memo(({ populationData }) => {
       pr={3}
       width="fit-content"
       py={3}
+      sx={{ "&:hover .chartAnimate": { transform: "scale(1.04)" } }}
     >
       <Box pl={2}>
         <Typography
@@ -27,6 +28,7 @@ export const ChartCard = React.memo(({ populationData }) => {
         </Typography>
       </Box>
       <LineChart
+        className="chartAnimate"
         width={400}
         margin={{ left: 45, right: 12 }}
         height={200}

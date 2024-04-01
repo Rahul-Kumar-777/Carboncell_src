@@ -3,14 +3,16 @@ import { font, theme } from "../../styles";
 import { ApplicationContext } from "../../context";
 import { useContext } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import PersonIcon from "@mui/icons-material/Person";
 
-export const NavigationDock = ({ navItems,setOpenDock, utility }) => {
+export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
   const { activeTab, setActiveTab } = useContext(ApplicationContext);
 
-  const handleButton = (i)=>{
-     setOpenDock(false)
-    setActiveTab(i)
-  }
+  /* Button click to set current module index */
+  const handleButton = (i) => {
+    setOpenDock(false);
+    setActiveTab(i);
+  };
   return (
     /* Navigation dock start */
     <Box
@@ -39,10 +41,7 @@ export const NavigationDock = ({ navItems,setOpenDock, utility }) => {
         height="70px"
         alignItems="center"
       >
-        <input
-          placeholder="Search"
-          className="searchBar"
-        />
+        <input placeholder="Search" className="searchBar" />
       </Box>
       {/* Middle Nav Button Section */}
       <Box display="flex" width="90%" flexDirection="column" gap={"13px"}>
@@ -50,7 +49,7 @@ export const NavigationDock = ({ navItems,setOpenDock, utility }) => {
           <Box
             sx={{ "&:hover": { backgroundColor: theme.col_5 } }}
             key={i}
-            onClick={()=>handleButton(i)}
+            onClick={() => handleButton(i)}
             display="flex"
             width="100%"
             alignItems={"center"}
@@ -156,11 +155,14 @@ export const NavigationDock = ({ navItems,setOpenDock, utility }) => {
             <Box
               display="flex"
               alignItems="center"
+              justifyContent="center"
               minWidth="35px"
               minHeight="35px"
               borderRadius="67px"
               backgroundColor={theme.col_17}
-            ></Box>
+            >
+              <PersonIcon />
+            </Box>
             <Box
               display="flex"
               flexDirection="column"

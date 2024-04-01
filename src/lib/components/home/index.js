@@ -1,15 +1,15 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { font, theme } from "../../styles";
 import { ApplicationContext } from "../../context";
 import { useContext } from "react";
 import { ButtonCustom } from "../button/button";
-import { Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
-
 import { PriceCards } from "../priceCards";
 import { ChartCard } from "../chartCard";
+
 export const HomeTab = () => {
   const { populationData, priceData, globalQuery } =
     useContext(ApplicationContext);
+
   return (
     <Box display="flex" width="100%" flexDirection="column" gap="23px">
       <Box

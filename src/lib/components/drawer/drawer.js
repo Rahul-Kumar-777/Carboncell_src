@@ -1,4 +1,4 @@
-import { Drawer, Typography } from "@mui/material";
+import { Drawer } from "@mui/material";
 import { NavigationDock } from "../navigationDock";
 
 export const SideDrawer = ({ navItems,openDock,setOpenDock,utility }) => {

@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { CONSOLE_MODE } from "../constants/constants";
+import Page404 from "../pages/404Page";
 
 export const RouteList = () => {
     if(CONSOLE_MODE.mode === 'production'){
@@ -12,6 +13,8 @@ export const RouteList = () => {
     <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/organisation" element={<Home />} />
+      <Route path="/" element={<Navigate replace to='/home'/>} />
+      <Route path="*" element={<Page404/>} />
     </Routes>
   );
 };

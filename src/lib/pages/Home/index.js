@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { font, theme } from "../../styles";
 import { NavigationDock } from "../../components/navigationDock";
@@ -147,7 +147,8 @@ export const Home = () => {
         console.log(error);
       }
     })();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); 
 
   return (
     <>

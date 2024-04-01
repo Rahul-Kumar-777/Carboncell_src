@@ -35,3 +35,7 @@ code {
 .searchBar::placeholder {
   color: white;
 }
+
+.chartAnimate{
+  transition:.5s ease 0s
+}

@@ -24,7 +24,6 @@ export const ButtonCustom = (props) => {
       ) : (
         props.typography
       )}
-      {/* {<CircularProgress sx={{color:theme.col_2}} size='22px'  />} */}
     </Button>
   );
 };
