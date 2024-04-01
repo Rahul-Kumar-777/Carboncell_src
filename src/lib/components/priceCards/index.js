@@ -1,0 +1,76 @@
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { font, theme } from "../../styles";
+import { ButtonCustom } from "../button/button";
+import { Info } from "@mui/icons-material";
+import he from "he";
+
+export const PriceCards = React.memo(({ priceData, globalQuery }) => {
+  return (
+    <Box display={"flex"} width="100%" flexWrap="wrap" gap="20px" pb={8}>
+      {Object.keys(priceData).map((key, i) => (
+        <Box
+          backgroundColor={theme.col_1}
+          minWidth="178px"
+          display={"flex"}
+          flexDirection={"column"}
+          gap="10px"
+          borderRadius="12px"
+          px={2}
+          py={1.5}
+          width={globalQuery ? "100%" : "18%"}
+        >
+          <Typography
+            fontSize={font.size.fs_3}
+            color={theme.col_4}
+            display="flex"
+            gap="7px"
+          >
+            {priceData[key]?.code}
+          </Typography>
+          <Typography
+            fontSize={font.size.fs_4}
+            color={theme.col_17}
+            display="flex"
+            gap="7px"
+          >
+            {priceData[key]?.description}
+          </Typography>
+          <Typography
+            fontSize={font.size.fs_2}
+            color={theme.col_4}
+            display="flex"
+            fontWeight="bold"
+            gap="7px"
+          >
+            {he.decode(priceData[key]?.symbol)}
+            {priceData[key]?.rate}
+          </Typography>
+          <Box backgroundColor={theme.col_1} display={"flex"}>
+            <Info sx={{ color: theme.col_4 }} />
+            <Box flex="1"></Box>
+            <ButtonCustom
+              background={theme.col_16}
+              height="30px"
+              backgroundRipple={theme.col_3}
+              focusColor={theme.col_1}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              typography={
+                <Typography
+                  fontFamily={font.family.fm_2}
+                  textTransform={"capitalize"}
+                  fontSize={font.size.fs_3}
+                  color={theme.col_4}
+                >
+                  Trade
+                </Typography>
+              }
+            />
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  );
+});
