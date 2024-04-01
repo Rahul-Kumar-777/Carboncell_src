@@ -24,14 +24,8 @@ export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
       borderRadius="0px 12px 12px 0px"
       backgroundColor={theme.col_1}
     >
-      <Box display="flex" pl={3}>
-        <Typography
-          fontSize={font.size.fs_5}
-          lineHeight={1}
-          color={theme.col_16}
-          width={"40px"}
-          pt={"29px"}
-        >
+      <Box display="flex" alignItems="center" justifyContent="center"  pt={"25px"}>
+        <Typography fontSize={font.size.fs_5} color={theme.col_16}>
           Carbon Cell
         </Typography>
       </Box>
@@ -47,7 +41,10 @@ export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
       <Box display="flex" width="90%" flexDirection="column" gap={"13px"}>
         {navItems.map((items, i) => (
           <Box
-            sx={{ "&:hover": { backgroundColor: theme.col_5 } }}
+            sx={{
+              "&:hover": { backgroundColor: theme.col_5 },
+              cursor: "pointer",
+            }}
             key={i}
             onClick={() => handleButton(i)}
             display="flex"
@@ -100,6 +97,7 @@ export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
               borderRadius="0px 45px 45px 0px"
               boxSizing="border-box"
               gap="8px"
+              sx={{ cursor: "pointer" }}
             >
               {items.icon}
               <Typography

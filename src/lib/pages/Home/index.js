@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { font, theme } from "../../styles";
 import { NavigationDock } from "../../components/navigationDock";
@@ -17,6 +17,7 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { HttpStatusCode } from "axios";
+import { ComingSoon } from "../comingSoon";
 
 export const Home = () => {
   /* Application context variables */
@@ -148,7 +149,7 @@ export const Home = () => {
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -201,7 +202,15 @@ const ActiveModule = ({ activeTab }) => {
     case 0:
       return <HomeTab />;
     case 1:
-      return <Typography>wef</Typography>;
+      return <ComingSoon />;
+    case 2:
+      return <ComingSoon />;
+    case 3:
+      return <ComingSoon />;
+    case 4:
+      return <ComingSoon />;
+    case 5:
+      return <ComingSoon />;
     default:
       return;
   }
