@@ -136,20 +136,31 @@ export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          px={1}
           boxSizing="border-box"
           width="100%"
         >
           <Box
+          width='93%'
             display="flex"
             alignItems="center"
-            flex="1"
+            justifyContent='center'
+            // flex="1"
             backgroundColor={theme.col_5}
             py={2}
-            pl={2}
+            // pl={2}
+            borderRadius="7px"
+          >
+                <Box
+          width='90%'
+            display="flex"
+            alignItems="center"
+            justifyContent='center'
+            // flex="1"
+            // pl={2}
             borderRadius="7px"
             gap="12px"
           >
+
             <Box
               display="flex"
               alignItems="center"
@@ -179,6 +190,7 @@ export const NavigationDock = ({ navItems, setOpenDock, utility }) => {
               </Typography>
             </Box>
             <MoreVertIcon sx={{ color: theme.col_17 }} />
+          </Box>
           </Box>
         </Box>
       </Box>

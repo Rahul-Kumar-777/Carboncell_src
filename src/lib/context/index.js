@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 
 export const ApplicationContext = createContext();
 export const ApplicationContextProvider = (props) => {
+  /* States and variables */
   const [activeTab, setActiveTab] = useState(0);
   const [populationData, setPopulationData] = useState([]);
   const [priceData, setPriceData] = useState([]);
-  const globalQuery = useMediaQuery('(max-width:960px)')
-
+  const globalQuery = useMediaQuery("(max-width:960px)");
 
   const states = {
     activeTab,
@@ -19,7 +19,7 @@ export const ApplicationContextProvider = (props) => {
     priceData,
     setPriceData,
 
-    globalQuery
+    globalQuery,
   };
 
   return (

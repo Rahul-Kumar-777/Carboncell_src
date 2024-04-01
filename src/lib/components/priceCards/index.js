@@ -81,7 +81,6 @@ export const PriceCards = React.memo(({ priceData, globalQuery }) => {
               justifyContent="center"
               typography={
                 <Typography
-                  fontFamily={font.family.fm_2}
                   textTransform={"capitalize"}
                   fontSize={font.size.fs_3}
                   color={theme.col_4}

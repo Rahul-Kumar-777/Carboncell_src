@@ -19,7 +19,7 @@ export const HomeTab = () => {
         position={"sticky"}
         top="0px"
         zIndex="10"
-        sx={{ backdropFilter: "blur(5px)" }}
+        backgroundColor={theme.col_2}
         pt={3.5}
       >
         <Box display="flex" flexDirection="column" flex="1">
@@ -59,7 +59,6 @@ export const HomeTab = () => {
           justifyContent="center"
           typography={
             <Typography
-              fontFamily={font.family.fm_2}
               textTransform={"capitalize"}
               fontSize={font.size.fs_3}
               color={theme.col_4}
@@ -69,7 +68,7 @@ export const HomeTab = () => {
           }
         />
       </Box>
-
+      {/* Chart card component */}
       <ChartCard populationData={populationData} />
       <Typography
         fontSize={font.size.fs_3}
@@ -80,6 +79,8 @@ export const HomeTab = () => {
       >
         Assets
       </Typography>
+      {/* Price card component */}
+
       <PriceCards globalQuery={globalQuery} priceData={priceData} />
     </Box>
   );

@@ -5,7 +5,6 @@ import { NavigationDock } from "../../components/navigationDock";
 import { ApplicationContext } from "../../context";
 import { HomeTab } from "../../components/home";
 import { chartData, prices } from "../../api/controllers/controller";
-import MenuIcon from "@mui/icons-material/Menu";
 import { SideDrawer } from "../../components/drawer/drawer";
 import { Home as HomeIcon } from "@mui/icons-material";
 import ViewInArIcon from "@mui/icons-material/ViewInAr";
@@ -18,6 +17,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { HttpStatusCode } from "axios";
 import { ComingSoon } from "../comingSoon";
+import { Header } from "../../components/header";
 
 export const Home = () => {
   /* Application context variables */
@@ -163,10 +163,7 @@ export const Home = () => {
       >
         {/* Navigation component */}
         {globalQuery ? (
-          <MenuIcon
-            onClick={() => setOpenDock(true)}
-            sx={{ color: theme.col_16, fontSize: font.size.fs_1, pl: 1, pt: 2 }}
-          />
+          <Header setOpenDock={setOpenDock} />
         ) : (
           <NavigationDock
             setOpenDock={setOpenDock}
